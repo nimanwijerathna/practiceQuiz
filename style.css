@@ -1,0 +1,114 @@
+:root {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+body {
+    background-image: url("wallpaper.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 20%);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    border-radius: 5px;
+    background-color: rgb(244, 213, 194);
+    padding: 20px;
+    box-shadow: rgb(0, 92, 51) 0 0 10px 2px;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    text-align: end;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border-color: black;
+    --hue: var(--hue-correct);
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-color: hsl(var(--hue), 100%, 30%);
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-color: hsl(var(--hue), 100%, 30%);
+}
+
+.start-btn,
+.next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.question,
+.btn-grid {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.final-score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
