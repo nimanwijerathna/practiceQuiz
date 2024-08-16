@@ -27,42 +27,142 @@ body.wrong {
     --hue: var(--hue-wrong);
 }
 
+.toggle-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* Default Slider Dot (Light Theme) */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ffffff; 
+    transition: .4s;
+    border-radius: 50%;
+    animation: blink 1s 5; 
+}
+
+/* Slider Dot in Dark Mode */
+body.dark-mode .slider:before {
+    background-color: #666464;
+    animation: blink 1s 5; 
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode .container {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0, 92, 51) 0 0 10px 2px;
+}
+
+/* Dark Theme */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-mode .container {
+    background-color: #333;
+    box-shadow: rgb(0, 92, 51) 0 0 10px 2px;
+}
+
 .container {
-    width: 800px;
+    width: 850px;
     max-width: 80%;
     border-radius: 5px;
-    background-color: rgb(244, 213, 194);
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     box-shadow: rgb(0, 92, 51) 0 0 10px 2px;
 }
 
 h1 {
-    font-weight: bold;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    margin: 0;
+    padding-bottom: 40px;
 }
 
-p {
-    padding: 0;
-    margin: 0;
-    font-size: 12px;
-    text-align: end;
+.version {
+    font-size: 0.4em; 
+    margin-left: 5px; 
+    color: #666464; 
 }
 
 .btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 10px;
     margin: 20px 0;
+    grid-template-columns: repeat(2, auto);
+
 }
 
 .btn {
-    --hue: var(--hue-neutral);
+    flex: 1 1 auto;
+    word-wrap: break-word;
+    word-break: break-word;
     border: 1px solid hsl(var(--hue), 100%, 30%);
     background-color: hsl(var(--hue), 100%, 50%);
     border-radius: 5px;
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
+    text-align: center;
+    --hue: var(--hue-neutral);
 }
 
 .btn:hover {
@@ -111,4 +211,33 @@ p {
     font-weight: bold;
     margin-top: 20px;
     text-align: center;
+}
+
+.question-text {
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+.answer-button {
+    font-size: 17px; 
+    margin: 10px 0; 
+    padding: 3px;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    .container {
+        width: auto;
+        padding: 10px;
+    }
+
+    .question,
+    .btn-grid {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 8px;
+    }
 }
