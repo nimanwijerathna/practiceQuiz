@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice Quiz</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.png">
+    <link rel="icon" href="resources/logo.png">
 </head>
 
 <body>
@@ -18,16 +18,19 @@
             </label>
         </div>
 
-        <h1>Practice Quiz <span class="version">Version 1.0.1</span></h1>
+        <h1>Practice Quiz <span class="version">Version 1.0.2</span></h1>
+
+        <div id="subject-container">
+            <button id="subject1-btn" class="btn subject-btn">WCD 1</button>
+            <button id="subject2-btn" class="btn subject-btn">WCD 2</button>
+        </div>
 
         <div id="question-container" class="hide">
             <div id="question" class="question"></div>
-            <div id="answer-buttons" class="btn-grid">
-
-            </div>
+            <div id="answer-buttons" class="btn-grid"></div>
         </div>
         <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="start-btn" class="start-btn btn hide">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
         <div id="final-score" class="final-score hide"></div>
@@ -35,7 +38,6 @@
     <div class="score hide" id="score-container">
         <span id="right-answers">0</span>
     </div>
-
 
     <script src="script.js"></script>
 </body>

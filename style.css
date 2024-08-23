@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url("wallpaper.jpg");
+    background-image: linear-gradient(39deg, rgb(255, 225, 53), rgb(109, 13, 136));
     background-position: center;
     background-repeat: no-repeat;
     padding: 0;
@@ -66,33 +66,36 @@ body.wrong {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     transition: .4s;
     border-radius: 50%;
-    animation: blink 1s 5; 
+    animation: blink 1s 5;
 }
 
 /* Slider Dot in Dark Mode */
 body.dark-mode .slider:before {
     background-color: #666464;
-    animation: blink 1s 5; 
+    animation: blink 1s 5;
 }
 
 /* Blinking animation */
 @keyframes blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0;
     }
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(26px);
 }
 
@@ -103,7 +106,7 @@ body.light-mode {
 
 body.light-mode .container {
     background-color: rgb(255, 255, 255);
-    box-shadow: rgb(0, 92, 51) 0 0 10px 2px;
+    box-shadow: rgb(2, 2, 2) 0 0 10px 2px;
 }
 
 /* Dark Theme */
@@ -114,7 +117,7 @@ body.dark-mode {
 
 body.dark-mode .container {
     background-color: #333;
-    box-shadow: rgb(0, 92, 51) 0 0 10px 2px;
+    box-shadow: rgb(255, 255, 255) 0 0 10px 2px;
 }
 
 .container {
@@ -123,7 +126,7 @@ body.dark-mode .container {
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     padding: 20px;
-    box-shadow: rgb(0, 92, 51) 0 0 10px 2px;
+    height: auto;
 }
 
 h1 {
@@ -136,9 +139,9 @@ h1 {
 }
 
 .version {
-    font-size: 0.4em; 
-    margin-left: 5px; 
-    color: #666464; 
+    font-size: 0.4em;
+    margin-left: 5px;
+    color: #666464;
 }
 
 .btn-grid {
@@ -213,18 +216,53 @@ h1 {
     text-align: center;
 }
 
-.question-text {
-    font-size: 20px; 
+.question {
+    font-size: 22px;
     font-weight: bold;
 }
 
 .answer-button {
-    font-size: 17px; 
-    margin: 10px 0; 
+    font-size: 17px;
+    margin: 10px 0;
     padding: 3px;
 }
 
+
+.subject-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.subject-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    margin-right: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.subject-btn:hover {
+    background-color: #750351;
+    color: gold;
+}
+
 /* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .subject-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subject-btn {
+        width: auto;
+    }
+}
+
 @media (max-width: 600px) {
     .container {
         width: auto;
