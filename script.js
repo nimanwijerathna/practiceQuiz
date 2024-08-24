@@ -118,6 +118,7 @@ function showFinalScore() {
     finalScoreElement.innerText = `You scored ${quizScore} out of ${selectedSubjectQuestions.length}!`;
     finalScoreElement.classList.remove('hide');
     scoreContainer.classList.remove('hide');
+    quizScore='';
     if (document.getElementById('right-answers')) {
         document.getElementById('right-answers').innerText = quizScore;
     }
