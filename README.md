@@ -4,3 +4,5 @@ Practice Quiz is a cool webpage that makes learning fun. It uses HTML, CSS, and 
 
 Preview
 ![practiceQuiz version 1 0 1](https://github.com/user-attachments/assets/895cd32f-fa83-4def-875f-f425fcb10090)
+
+link : https://nimanwijerathna.github.io/practiceQuiz/
